@@ -4,9 +4,9 @@ import Nav from './Nav';
 import NavMobile from './NavMobile';
 import LoadingC from './SecComponents/LoadingComponent';
 import { useAnimatedDown } from '../hooks/useAnimateRight';
-import { TarjetaU } from './SecComponents/TarjetaU'; // Este componente se necesita crear
+import { TarjetaU } from './SecComponents/TarjetaU';
 import { Search } from './SecComponents/Search';
-import ErrorNoCharacter from './SecComponents/ErrorNoCharacter'; // Puede renombrarse a ErrorNoLocation
+import ErrorNoCharacter from './SecComponents/ErrorNoCharacter';
 
 export const Ubicaciones = () => {
     const [nextPage, setNextPage] = useState(1);
@@ -24,7 +24,6 @@ export const Ubicaciones = () => {
         setNextPage(prevPage => prevPage - 1);
     };
 
-    // Reutilizo la función de debounce del componente Personajes
     const debounce = (func, wait) => {
         let timeout;
         return (...args) => {
@@ -59,7 +58,7 @@ export const Ubicaciones = () => {
                         <TarjetaU key={location.id} location={location} />
                     ))
                 ) : (
-                    <ErrorNoCharacter /> // Puede ser renombrado a ErrorNoLocation para reflejar mejor su propósito
+                    <ErrorNoCharacter ErrorBusqueda={"Parece que la ubicacion que buscas no esta en este Universo..."} />
                 )}
             </div>
 

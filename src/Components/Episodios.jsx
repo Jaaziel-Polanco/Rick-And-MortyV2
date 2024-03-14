@@ -5,7 +5,7 @@ import NavMobile from './NavMobile';
 import LoadingC from './SecComponents/LoadingComponent';
 import { useAnimatedJump } from '../hooks/useAnimateRight';
 import { Search } from './SecComponents/Search';
-import ErrorNoCharacter from './SecComponents/ErrorNoCharacter'; // Puede renombrarse a ErrorNoEpisode
+import ErrorNoCharacter from './SecComponents/ErrorNoCharacter';
 import TarjetaE from './SecComponents/TarjetaE';
 
 const Episodios = () => {
@@ -58,7 +58,7 @@ const Episodios = () => {
                         <TarjetaE key={episode.id} episode={episode} />
                     ))
                 ) : (
-                    <ErrorNoCharacter /> // Puede ser renombrado a ErrorNoLocation para reflejar mejor su propósito
+                    <ErrorNoCharacter ErrorBusqueda={"Parece que el Episodio que buscas no existe en este Universo..."} />
                 )}
             </div>
 

@@ -24,7 +24,6 @@ export const Personajes = () => {
         setNextPage(prevPage => prevPage - 1);
     };
 
-    // Función de debounce personalizada
     const debounce = (func, wait) => {
         let timeout;
         return (...args) => {
@@ -33,14 +32,12 @@ export const Personajes = () => {
         };
     };
 
-    // Actualizar searchTerm usando debounce
     const debouncedSetSearchTerm = debounce(value => setSearchTerm(value), 500);
 
     const handleSearch = (event) => {
         debouncedSetSearchTerm(event.target.value);
     };
 
-    // Reiniciar la paginación al cambiar el término de búsqueda
     useEffect(() => {
         setNextPage(1);
     }, [searchTerm]);
@@ -61,7 +58,7 @@ export const Personajes = () => {
                         <TarjetaP key={character.id} character={character} />
                     ))
                 ) : (
-                    <ErrorNoCharacter />)}
+                    <ErrorNoCharacter ErrorBusqueda={"Parece que el Personaje que estas buscando no esta en este Universo..."} />)}
             </div>
 
             <div className='text-center mt-16 flex justify-center gap-3'>

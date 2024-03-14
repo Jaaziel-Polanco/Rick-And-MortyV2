@@ -1,10 +1,8 @@
 import React from 'react';
 
 const TarjetaE = ({ episode }) => {
-    // Extraer el número de la temporada del código del episodio (p.ej., "S02E05" daría "2")
     const seasonNumber = parseInt(episode.episode.substring(1, 3), 10);
 
-    // Definir las clases de gradiente en un objeto
     const gradients = {
         1: 'bg-gradientS1',
         2: 'bg-gradientS2',
@@ -13,7 +11,6 @@ const TarjetaE = ({ episode }) => {
         5: 'bg-gradientS5',
     };
 
-    // Obtener la clase de gradiente correspondiente
     const gradientClass = gradients[seasonNumber] || 'bg-defaultGradient';
 
     return (
